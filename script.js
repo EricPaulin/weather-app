@@ -1,11 +1,7 @@
 let weather = {
-    apiKey: "f94bdaed3a502db763af194b361553e5",
     fetchWeather: function(city) {
-        fetch(
-            "https://api.openweathermap.org/data/2.5/weather?q="
-            + city 
-            + "&units=metric&appid=" 
-            + this.apiKey
+        fetch("https://api.openweathermap.org/data/2.5/weather?q="
+            + city + "&units=metric&appid=f94bdaed3a502db763af194b361553e5"
         )
             // Grabbing Data from API
             .then((response) => response.json())
@@ -27,7 +23,7 @@ let weather = {
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + "°C";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-        document.querySelector(".wind").innerText = "Wind Speed: " + speed + "km/hr";
+        document.querySelector(".wind").innerText = "Wind Speed: " + speed + " km/hr";
 
         document.querySelector(".weather").classList.remove("loading");
         // Grabs Image using Searched City as keyword
