@@ -1,0 +1,28 @@
+@font-face {
+    font-family: quicksand;
+    src: url(./fonts/Quicksand-SemiBold.ttf);
+}
+
+* {
+    font-family: quicksand;
+}
+
+/* Centers the card + Prevents Scrolling Past Viewport */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: aliceblue;
+}
+
+/* Setting Max Width and Margin allow Card to work on all Screen Sizes */
+.card {
+    background: gainsboro;
+    padding: 2em;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+}
