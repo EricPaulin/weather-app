@@ -26,8 +26,6 @@ let weather = {
         document.querySelector(".wind").innerText = "Wind Speed: " + speed + " km/hr";
 
         document.querySelector(".weather").classList.remove("loading");
-        // Grabs Image using Searched City as keyword
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
     },
     // Grabs Search Bar Data
     search: function() {
