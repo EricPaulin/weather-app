@@ -22,11 +22,34 @@ let weather = {
         console.log(name,icon,description,temp,humidity,speed);
         
         // Swapping Current Weather with Searched City Data
-        document.querySelector(".city").innerText = "Weather in " + name;
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".city").innerText = name;
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + "°C";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind Speed: " + speed + "km/hr";
+
+        document.querySelector(".weather").classList.remove("loading");
+        // Grabs Image using Searched City as keyword
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
     },
+    // Grabs Search Bar Data
+    search: function() {
+        this.fetchWeather(document.querySelector(".search-bar").value);
+    }
 };
+
+// Search Bar Functionality
+document.querySelector(".search button").addEventListener("click", function() {
+    weather.search();
+});
+
+// Works with Enter Key
+document.querySelector(".search-bar").addEventListener("keyup", function(event){
+    if(event.key == "Enter") {
+        weather.search();
+    }
+})
+
+// Loads Data Upon Startup + Doesn't Display Incorrect Dummy Text
+weather.fetchWeather("Sacramento");
