@@ -7,22 +7,64 @@
     font-family: quicksand;
 }
 
-/* Centers the card + Prevents Scrolling Past Viewport */
+button {
+    margin: 0.5rem;
+    border-radius: 0.2rem;
+    border: none;
+    height: 2.2rem;
+    width: 2.5rem;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #7c7c7c6b;;
+}
+
+/* Centers the card, Prevents Scrolling Past Viewport, Random Background */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: aliceblue;
+    background-image: url(https://source.unsplash.com/1600x900/?gradient,sky);
 }
 
 /* Setting Max Width and Margin allow Card to work on all Screen Sizes */
 .card {
-    background: gainsboro;
+    background: #000000d0;
+    color: white;
     padding: 2em;
-    border-radius: 0.5rem;
+    border-radius: 0.7rem;
     width: 100%;
     max-width: 420px;
     margin: 1em;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    background: #7c7c7c2b;
+    color: white;
+    font-size: 120%;
+    width: calc(80% - 1rem);
+}
+
+.temp {
+    margin: 0;
+}
+
+.description {
+    text-transform: capitalize;
 }
